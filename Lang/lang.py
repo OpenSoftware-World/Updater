@@ -1,8 +1,8 @@
-""" Copyright© 2025 LinuxUsersLinuxMint
+""" Copyright© 2025 OpenSoftware-World
 Updater Tüm Hakları GPL(Genel Kamu Lisansı) altında korunmaktadır.
 Updater All Rights Reserved under the GPL(General Public License).
-Bu Yazılımın Bir Kopyası GitHub da yayınlanmaktadır Görüntülemek için: https://github.com/LinuxUsersLinuxMint/Updater
-A Copy of This Software is published on GitHub To view: https://github.com/LinuxUsersLinuxMint/Updater"""
+Bu Yazılımın Bir Kopyası GitHub da yayınlanmaktadır Görüntülemek için: https://github.com/OpenSoftware-World/Updater
+A Copy of This Software is published on GitHub To view: https://github.com/OpenSoftware-World/Updater """
 
 import configparser
 
