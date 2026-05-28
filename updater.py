@@ -1,10 +1,14 @@
+from tkinter import PhotoImage
 import customtkinter, zipfile
 from CTkMessagebox import CTkMessagebox
 from UpdaterSettings.updater_settings import *
 from Theme.theme import *
-import os, shutil
+import os, shutil, platform
 from Lang.lang import *
-import pywinstyles
+if platform.system() == "Windows":
+    import pywinstyles
+else:
+    pass
 
 def updater():
     download = requests.get(file_url, stream=True)
@@ -39,7 +43,7 @@ window = customtkinter.CTk()
 window.title(f"{software_name} {w_title}")
 window.geometry(w_default_res)
 window.resizable(False, False)
-window.iconbitmap(icon)
+window.iconphoto(False, PhotoImage(file=icon))
 
 if new_ver > current_ver:
     label = customtkinter.CTkLabel(master=window, text=f"{new_update} {software_name} {new_update_}", font=(userFont, userTitleFontSize, userFontBold))
@@ -60,7 +64,8 @@ else:
     current_ver_label = customtkinter.CTkLabel(master=window, text=f"{current_version} {current_ver}", font=(userFont, userFontSize, userFontBold))
     current_ver_label.place(x=0, y=30)
 
-pywinstyles.apply_style(window, pywinstyles_theme)
+if platform.system() == "Windows":
+    pywinstyles.apply_style(window, pywinstyles_theme)
 customtkinter.set_appearance_mode(userTheme)
 
 window.mainloop()
