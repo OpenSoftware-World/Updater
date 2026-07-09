@@ -1,0 +1,49 @@
+name: Auto Fix Lint (PR)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Install Ruff
+        run: pip install ruff==0.6.0
+
+      - name: Run Ruff Fix
+        run: ruff check . --fix
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "auto: fix lint issues"
+          title: "Auto: Fix lint issues"
+          body: "This PR fixes lint issues automatically using Ruff."
+          branch: "auto/lint-fix"
+          delete-branch: true
