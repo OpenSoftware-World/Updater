@@ -1,8 +1,16 @@
-""" Copyright© 2025 OpenSoftware-World
+""" Copyright© 2025-2026 OpenSoftware-World
 Updater Tüm Hakları GPL(Genel Kamu Lisansı) altında korunmaktadır.
 Updater All Rights Reserved under the GPL(General Public License).
 Bu Yazılımın Bir Kopyası GitHub da yayınlanmaktadır Görüntülemek için: https://github.com/OpenSoftware-World/Updater
 A Copy of This Software is published on GitHub To view: https://github.com/OpenSoftware-World/Updater """
+
+"""
+This file the theme.py file stores the appearance settings for the application called Updater.
+
+The theme file specified by the user is read, and then the necessary variables are created based on that file and made available to the application.
+
+Note: You can modify this file to suit your own design or layout needs, but you must verify that your changes are compatible with updater.py.
+"""
 
 import configparser
 

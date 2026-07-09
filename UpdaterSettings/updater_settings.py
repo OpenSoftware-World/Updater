@@ -1,5 +1,11 @@
 import configparser, requests
 
+"""
+This file specifically, the `updater_settings.py` file generates application and update information for use by the application named “Updater” and makes it available to the application.
+
+Warning: It is generally not recommended that you modify this file, but if you have specific needs, you can redesign the update information system from scratch to suit your needs.
+"""
+
 updater_config = configparser.ConfigParser()
 updater_config.read("UpdaterSettings/updater.ini")
 

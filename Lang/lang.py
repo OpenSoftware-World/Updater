@@ -1,8 +1,16 @@
-""" Copyright© 2025 OpenSoftware-World
+""" Copyright© 2025-2026 OpenSoftware-World
 Updater Tüm Hakları GPL(Genel Kamu Lisansı) altında korunmaktadır.
 Updater All Rights Reserved under the GPL(General Public License).
 Bu Yazılımın Bir Kopyası GitHub da yayınlanmaktadır Görüntülemek için: https://github.com/OpenSoftware-World/Updater
 A Copy of This Software is published on GitHub To view: https://github.com/OpenSoftware-World/Updater """
+
+"""
+This file the lang.py file enables the language system of the application called Updater to function.
+
+When the user changes the lang variable in the Lang/lang.ini file, the software reads that file that is, the .ini file specified by the user and then creates all the variables based on that file.
+
+Warning: Unless you want to make a very specific change, it is recommended that you do not modify this file.
+"""
 
 import configparser
 

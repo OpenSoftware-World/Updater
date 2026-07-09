@@ -1,14 +1,19 @@
 from tkinter import PhotoImage
-import customtkinter, zipfile
+import customtkinter, zipfile, os, shutil, platform
 from CTkMessagebox import CTkMessagebox
 from UpdaterSettings.updater_settings import *
 from Theme.theme import *
-import os, shutil, platform
 from Lang.lang import *
 if platform.system() == "Windows":
     import pywinstyles
 else:
-    pass
+    print("Note: The “pywinstyles” library has not been imported. You must be using the Windows operating system to import the “pywinstyles” library. (Rest assured, it won't significantly affect the app's performance.)")
+
+"""
+This file, updater.py, is the main file of the application called Updater. It checks for updates by retrieving the necessary information from all other configuration files and helper files, and if an update is available, it allows you to download and install it.
+
+Note: You can modify this file to suit your needs, ensuring it is compatible with the relevant configuration files and supporting files.
+"""
 
 def updater():
     download = requests.get(file_url, stream=True)
